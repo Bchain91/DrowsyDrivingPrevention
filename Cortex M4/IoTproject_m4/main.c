@@ -10,7 +10,7 @@
 
 /******************************************************************************
 * General-purpose timers TIM10
-Æ÷Æ® ¿¬°á:
+í¬íŠ¸ ì—°ê²°:
 
 PA0,PA1 : UART4 RX,TX  Bluetooth 
 PA2,PA3 : UART2 RX,TX  Debug
@@ -53,7 +53,7 @@ int main()
   PORTC_Led_Init();
   
   GPIOAB_LCD_Init();
-  lcd(0,0,"Drive safely");    // ¹®ÀÚ¿­ Ãâ·Â
+  lcd(0,0,"Drive safely");    // ë¬¸ìžì—´ ì¶œë ¥
   lcd(0,1,"");
   
   Serial2_Send_String("start main()\r\n");
@@ -102,26 +102,26 @@ void Serial4_Event()
   
   if(!strcmp(pArray[1],"ON"))
   {
-    TIM10->CCR1 = 700; // ¼­º¸¸ðÅÍ ¾Æ·¡·Î ÀÛµ¿   Ã¢¹®¿­±â , Áøµ¿ ¼¾¼­ ÀÛµ¿
+    TIM10->CCR1 = 700; // ì„œë³´ëª¨í„° ì•„ëž˜ë¡œ ìž‘ë™   ì°½ë¬¸ì—´ê¸° , ì§„ë™ ì„¼ì„œ ìž‘ë™
     GPIOAB_LCD_Init();
-    lcd(0,0,"Take a break");    // ¹®ÀÚ¿­ Ãâ·Â
+    lcd(0,0,"Take a break");    // ë¬¸ìžì—´ ì¶œë ¥
     lcd(0,1,"Place : ");
     Motor_Start();
   }
   else if(!strcmp(pArray[1], "OFF"))
   {
-    TIM10->CCR1 = 1500; // ¼­º¸¸ðÅÍ º¹±Í         Ã¢¹®´Ý±â, Áøµ¿ ¼¾¼­ ÁßÁö
+    TIM10->CCR1 = 1500; // ì„œë³´ëª¨í„° ë³µê·€         ì°½ë¬¸ë‹«ê¸°, ì§„ë™ ì„¼ì„œ ì¤‘ì§€
     GPIOAB_LCD_Init();
-    lcd(0,0,"Navigation");    // ¹®ÀÚ¿­ Ãâ·Â
+    lcd(0,0,"Navigation");    // ë¬¸ìžì—´ ì¶œë ¥
     lcd(0,1,"Safe");
     Motor_Stop();
     LEDFlag = 0;
   }
   else if(!strcmp(pArray[1], "TA"))
   {
-    TIM10->CCR1 = 700; // ¼­º¸¸ðÅÍ º¹±Í         Ã¢¹®´Ý±â, Áøµ¿ ¼¾¼­ ÁßÁö
+    TIM10->CCR1 = 700; // ì„œë³´ëª¨í„° ì•„ëž˜ë¡œ ìž‘ë™   ì°½ë¬¸ì—´ê¸° , ì§„ë™ ì„¼ì„œ ìž‘ë™
     GPIOAB_LCD_Init();
-    lcd(0,0,"Traffic");    // ¹®ÀÚ¿­ Ãâ·Â
+    lcd(0,0,"Traffic");    // ë¬¸ìžì—´ ì¶œë ¥
     lcd(0,1,"Accident");
     Motor_Stop();
     LEDFlag = 1;
